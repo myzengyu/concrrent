@@ -1,4 +1,4 @@
-package com.zengyu.bingfa.juc;
+package com.concurrent.juc;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;

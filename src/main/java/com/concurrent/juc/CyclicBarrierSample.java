@@ -1,4 +1,4 @@
-package com.zengyu.bingfa.juc;
+package com.concurrent.juc;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

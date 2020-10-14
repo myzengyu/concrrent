@@ -1,8 +1,6 @@
-package com.zengyu.bingfa.thread;
+package com.concurrent.thread;
 
 import java.util.Random;
-
-import static sun.misc.PostVMInitHook.run;
 
 /**
  * @Classname SyncSample

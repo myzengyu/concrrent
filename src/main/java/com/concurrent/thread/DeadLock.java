@@ -1,4 +1,4 @@
-package com.zengyu.bingfa.thread;
+package com.concurrent.thread;
 
 /**
  * @Classname DeadLock

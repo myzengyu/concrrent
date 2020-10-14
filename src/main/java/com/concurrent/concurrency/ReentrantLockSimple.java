@@ -1,20 +1,21 @@
-package com.zengyu.bingfa.juc;
+package com.concurrent.concurrency;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @Classname AtomicSample
+ * @Classname DownloadSimple
  * @Description TODO
- * @Date 2020-10-14 15:35
+ * @Date 2020-9-29 11:04
  * @Created by zengyu
  */
-public class AtomicSample {
+public class ReentrantLockSimple {
     public static int users = 100; //同时模拟并发下载的用户数
     public static int downTotal = 50000; //用户下载的真是总数
-    public static AtomicInteger count = new AtomicInteger(); //计数器
+    public static int count = 0; //计数器
+    private final static ReentrantLock lock = new ReentrantLock();
 
     public static void main(String[] args) {
         //调度器 jdk1.5后提供的concurrent包对于并发的支持
@@ -45,7 +46,11 @@ public class AtomicSample {
     }
 
     private static void add() {
-//        count++;
-        count.getAndIncrement();
+        lock.lock();
+        try {
+            count++;
+        } finally {
+            lock.unlock(); //解锁 一定要放在finally里面否则会出现死锁
+        }
     }
 }

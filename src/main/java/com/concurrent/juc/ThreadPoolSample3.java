@@ -1,4 +1,4 @@
-package com.zengyu.bingfa.juc;
+package com.concurrent.juc;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
